@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "many_soils",
+	"version": "${version}",
+	"name": "Many Soils",
+	"description": "Adds many soils.",
+	"authors": [
+		"ToxicGold180"
+	],
+	"contact": {
+		"homepage": "https://github.com/ToxicGold180",
+		"sources": "https://github.com/ToxicGold180/Many-Soils-1.21.1"
+	},
+	"license": "MIT",
+	"icon": "assets/many_soils/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.toxicgold180.many_soils.ManySoils"
+		],
+		"fabric-datagen": [
+			"net.toxicgold180.many_soils.ManySoilsDataGenerator"
+		],
+		"client": [
+			"net.toxicgold180.many_soils.ManySoilsClient"
+		]
+	},
+	"mixins": [
+		"many_soils.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
