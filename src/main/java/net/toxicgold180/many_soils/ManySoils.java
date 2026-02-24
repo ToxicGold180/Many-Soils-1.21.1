@@ -2,6 +2,8 @@ package net.toxicgold180.many_soils;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.toxicgold180.many_soils.block.ModBlocks;
+import net.toxicgold180.many_soils.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +13,7 @@ public class ManySoils implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }

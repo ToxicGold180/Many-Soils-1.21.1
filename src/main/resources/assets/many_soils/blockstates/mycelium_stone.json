@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "many_soils:block/mycelium_stone"
+      },
+      {
+        "model": "many_soils:block/mycelium_stone",
+        "y": 90
+      },
+      {
+        "model": "many_soils:block/mycelium_stone",
+        "y": 180
+      },
+      {
+        "model": "many_soils:block/mycelium_stone",
+        "y": 270
+      }
+    ],
+    "snowy=true": {
+      "model": "many_soils:block/stone_snow"
+    }
+  }
+}
