@@ -4,12 +4,6 @@
   "ingredients": [
     {
       "item": "minecraft:stone"
-    },
-    {
-      "item": "minecraft:red_mushroom"
-    },
-    {
-      "item": "minecraft:brown_mushroom"
     }
   ],
   "result": {
