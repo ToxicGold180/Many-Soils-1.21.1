@@ -14,6 +14,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.toxicgold180.many_soils.ManySoils;
+import net.toxicgold180.many_soils.sound.ModBlockSoundGroup;
 
 public class ModBlocks {
     public static final Block MYCELIUM_STONE = registerBlock(
@@ -24,7 +25,7 @@ public class ModBlocks {
                             .mapColor(MapColor.PURPLE)
                             .ticksRandomly()
                             .strength(1.6F, 6.1F)
-                            .sounds(BlockSoundGroup.STONE)
+                            .sounds(ModBlockSoundGroup.GRASSY_STONE)
             )
     );
 

@@ -20,9 +20,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     public void generate(RecipeExporter exporter) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MYCELIUM_STONE, 1)
                 .input(Blocks.STONE)
+                .input(Blocks.RED_MUSHROOM)
+                .input(Blocks.BROWN_MUSHROOM)
                 .criterion(hasItem(Blocks.STONE), conditionsFromItem(Blocks.STONE))
-                .criterion(hasItem(Blocks.RED_MUSHROOM), conditionsFromItem(Blocks.STONE))
-                .criterion(hasItem(Blocks.BROWN_MUSHROOM), conditionsFromItem(Blocks.STONE))
                 .offerTo(exporter);
     }
 }
