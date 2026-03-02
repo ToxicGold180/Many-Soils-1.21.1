@@ -19,7 +19,7 @@ import net.toxicgold180.many_soils.sound.ModBlockSoundGroup;
 public class ModBlocks {
     public static final Block MYCELIUM_STONE = registerBlock(
             "mycelium_stone",
-            new MyceliumBlock(
+            new ModMyceliumBlock(
                     AbstractBlock.Settings.create()
                             .requiresTool()
                             .mapColor(MapColor.PURPLE)
