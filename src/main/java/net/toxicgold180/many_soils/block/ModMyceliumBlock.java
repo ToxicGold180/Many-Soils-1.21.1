@@ -10,10 +10,10 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
 public class ModMyceliumBlock extends ModSpreadableBlock {
-    public static final MapCodec<net.toxicgold180.many_soils.block.ModMyceliumBlock> CODEC = createCodec(net.toxicgold180.many_soils.block.ModMyceliumBlock::new);
+    public static final MapCodec<ModMyceliumBlock> CODEC = createCodec(ModMyceliumBlock::new);
 
     @Override
-    public MapCodec<net.toxicgold180.many_soils.block.ModMyceliumBlock> getCodec() {
+    public MapCodec<ModMyceliumBlock> getCodec() {
         return CODEC;
     }
 

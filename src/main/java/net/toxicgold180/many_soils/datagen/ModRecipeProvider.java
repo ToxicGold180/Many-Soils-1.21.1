@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.RecipeGenerator;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
@@ -17,12 +18,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
     @Override
-    public void generate(RecipeExporter exporter) {
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MYCELIUM_STONE, 1)
-                .input(Blocks.STONE)
-                .input(Blocks.RED_MUSHROOM)
-                .input(Blocks.BROWN_MUSHROOM)
-                .criterion(hasItem(Blocks.STONE), conditionsFromItem(Blocks.STONE))
-                .offerTo(exporter);
+    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
+        return new RecipeGenerator(wrapperLookup, recipeExporter) {
+            @Override
+            public void generate() {
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MYCELIUM_STONE, 1)
+                        .input(Blocks.STONE)
+                        .input(Blocks.RED_MUSHROOM)
+                        .input(Blocks.BROWN_MUSHROOM)
+                        .criterion(hasItem(Blocks.STONE), conditionsFromItem(Blocks.STONE))
+                        .offerTo(exporter);
+            }
+        };
+    }
+
+    @Override
+    public String getName() {
+        return "ManySoils Recipes";
     }
 }

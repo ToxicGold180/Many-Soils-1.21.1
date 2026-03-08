@@ -18,18 +18,18 @@ public abstract class ModSpreadableBlock extends SnowyBlock {
     private static boolean canSurvive(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.up();
         BlockState blockState = world.getBlockState(blockPos);
-        if (blockState.isOf(Blocks.SNOW) && (Integer)blockState.get(SnowBlock.LAYERS) == 1) {
+        if (blockState.isOf(Blocks.SNOW) && (Integer) blockState.get(SnowBlock.LAYERS) == 1) {
             return true;
         } else if (blockState.getFluidState().getLevel() == 8) {
             return false;
         } else {
-            int i = ChunkLightProvider.getRealisticOpacity(world, state, pos, blockState, blockPos, Direction.UP, blockState.getOpacity(world, blockPos));
-            return i < world.getMaxLightLevel();
+            int i = ChunkLightProvider.getRealisticOpacity(state, blockState, Direction.UP, blockState.getOpacity());
+            return i < 15;
         }
     }
 
     @Override
-    protected abstract MapCodec<? extends net.toxicgold180.many_soils.block.ModSpreadableBlock> getCodec();
+    protected abstract MapCodec<? extends ModSpreadableBlock> getCodec();
 
     private static boolean canSpread(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.up();
